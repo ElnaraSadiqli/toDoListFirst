@@ -1,0 +1,209 @@
+body {
+    background-color: $clr-yel;
+}
+
+// Home Page Design
+
+.todo-list {
+    height: 100%;
+    width: 70%;
+    margin-top: 10%;
+    margin-left: 15%;
+
+
+    // <!--To Do List Card 
+    .card-todo {
+        border-radius: 15px;
+        position: relative;
+
+        //Card  Header (date)
+        .card-date {
+            padding-top: 2rem;
+            border-radius: 10px;
+            border-bottom: 2px solid #f5c8d0;
+
+            //  Card Header Top (date) Week and day
+            .card-date-week {
+                color: $clr-pink;
+                @extend .font-size-h1;
+
+                //  Card Header Top (date) day 
+                .card-date-day {
+                    color: $clr-lpink;
+                    @extend .font-size-h2;
+
+                }
+            }
+
+            //  Card Header Bottom (date)  Month
+            .card-date-bottom {
+                padding-top: 10px;
+
+                .card-date-month {
+                    @extend .font-size-h3;
+                    color: $txt-clr-orange;
+                }
+            }
+
+
+        }
+
+        // Card Body (checkbox) 
+        .card-checkbox {
+
+            // Card Body (checkbox) Header 
+
+            .card-header:first-child {
+                background-color: transparent;
+
+                // Card Body (checkbox) Status 
+                .card-body-status {
+                    display: flex;
+                    justify-content: space-around;
+
+                    .status {
+                        @extend .font-size-h2;
+                        color: $color-green;
+                        border-right: 1px solid $txt-clr-orange;
+                        padding-right: 10px;
+
+                        &:hover {
+                            color: $txt-clr-orange;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                // Card Body (checkbox) Header Button Clear
+                .card-body-btn {
+                    @include buttons($color-green);
+                    color: whitesmoke;
+                }
+
+
+            }
+
+        }
+
+        // Card Body List (checkbox) 
+        .card-body-list {
+            padding-top: 2rem;
+
+            // Card Body List item
+            li {
+
+                //  Changes for checkbox
+                .card-form-check {
+
+                    //  Input Check for checkbox
+                    #input-check {
+                        appearance: none;
+                        @include checkBox;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                    }
+
+                    // Label  for checkbox
+                    .card-form-label {
+                        @extend .font-size-h4;
+                    }
+
+
+                    // Dropdown menu for checkbox
+                    #dropdown-btn {
+                        color: $color-green;
+                    }
+                }
+            }
+
+
+        }
+
+        .add-btn {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            @include buttons($clr-lpink);
+
+            // &:focus {
+            //     padding: 1.6rem;
+            //     box-shadow: $color-green 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            // }
+            .add-btn-icon {
+                color: $clr-yel;
+            }
+
+
+        }
+
+    }
+
+
+    // Input Card
+    .card-input {
+        width: 38%;
+        border-radius: unset;
+
+        // Input Card Header
+        .card-input-tt {
+            @extend .font-size-h3;
+            color: #767676;
+            padding-top: 6px;
+        }
+
+        // Input Card Body
+        .card-form{
+
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Page Header
+// .section-left {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     padding: 1rem;
+
+//     img {
+//         object-fit: cover;
+//     }
+
+
+
+// p {
+//     font-size: 4rem;
+//     color: #057DA7;
+// }
+
+// span {
+//     font-size: 4rem;
+//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+//     color: #E2AD11;
+// }

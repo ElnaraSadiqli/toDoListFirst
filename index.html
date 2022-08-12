@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BootStrap Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- FontAwesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Css Link -->
+    <link rel="stylesheet" href="Sass/styles.css">
+    <!-- Title of Page -->
+    <title>ToDoList</title>
+
+</head>
+
+<body>
+    <div class="container ">
+
+        <!--To Do List Card -->
+        <main class="todo-list">
+            <div class="card card-todo">
+                <!-- Card  Header (date)-->
+                <div class="card-header card-date">
+                    <!--  Card Header Top (date) Week and day -->
+                    <div class="card-date-top">
+                        <p class="card-date-week">Friday , <span class="card-date-day">31th</span></p>
+
+                    </div>
+                    <!-- Card Header Bottom (date)  Month -->
+                    <div class="card-date-bottom">
+                        <p class="card-date-month">August</p>
+                    </div>
+
+                </div>
+                <!--Card Body (checkbox) -->
+                <div class="card-body card-checkbox">
+                    <div class="card-header">
+
+                        <div class="row align-items-center">
+
+                            <!--Card Body (checkbox) Header Status -->
+                            <div class="col-10 card-body-status">
+                                <a href="#" class="all status">All</a>
+                                <a href="#" class="complate status">Complated</a>
+                                <a href="#" class="progres status">Progress</a>
+
+                            </div>
+                            <!--Card Body (checkbox) Header Button Clear-->
+                            <div class="col-2 ">
+                                <button class="card-body-btn btn btn-primary">
+                                    <i class="fa-solid fa-trash-can fa-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Body  CheckBox  List -->
+                    <ul class="card-body-list ">
+                        <li class="d-flex  justify-content-around align-items-center">
+                            <!-- Form for CheckBox  List -->
+                            <form class="card-form-check">
+                                <input type="checkbox" name="input-check" id="input-check" class="inputName">
+                                <label class="card-form-label" for="input-check">lorem101010101010101010</label>
+                            </form>
+
+                            <!-- Select Option (del or updt)  for CheckBox  -->
+                            <div class="dropdown dropdown-checkbox">
+                                <button class="btn dropdown-toggle" id="dropdown-btn" type="button"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex justify-content-around mt-4 align-items-center mt-4">
+                            <!-- Form for CheckBox  List -->
+                            <form class="card-form-check">
+                                <input type="checkbox" name="inputName" class="inputName" id="input-check">
+                                <label class="card-form-label" for="input-check">lorem101010101010101010</label>
+                            </form>
+
+                            <!-- Select Option (del or updt)  for CheckBox  -->
+                            <div class="dropdown dropdown-checkbox">
+                                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex justify-content-around mt-4 
+                             align-items-center">
+                            <!-- Form for CheckBox  List -->
+                            <form class="card-form-check">
+                                <input type="checkbox" name="inputName" id="input-check">
+                                <label class="card-form-label" for="input-check">lorem101010101010101010</label>
+                            </form>
+
+                            <!-- Select Option (del or updt)  for CheckBox  -->
+                            <div class="dropdown dropdown-checkbox">
+                                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <!--  Button for display input card -->
+                    <button class="add-btn">
+                        <a href="#" class="add-btn-icon">
+                            <i class="fas fa-plus fa-xl addBtnIcon "></i>
+                        </a>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Input Card -->
+            <section class="card card-input">
+                <!-- Input Card Title -->
+                <div class="card-header ">
+                    <p class="card-input-tt">Add Task</p>
+
+                </div>
+                <!--  Form  for insert value to  input card-->
+                <div class="card-body card-input-body ">
+                    <form action="#" id="card-form">
+                        <!-- Input for insert value to  input card -->
+                        <input type="text" id="todoInput" name="todoInput" class="todo-input"
+                            placeholder="Insert Your Plan">
+                        <!-- Button for insert value to  input card-->
+                        <button type="submit" class="add-btn btn">Send</button>
+
+                    </form>
+                </div>
+
+            </section>
+
+
+        </main>
+    </div>
+    </div>
+
+
+
+
+
+
+    <!-- BootStrap Link for Js -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+</body>
+
+</html>

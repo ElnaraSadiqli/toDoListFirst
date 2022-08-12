@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body ul li {
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
+  color: unset;
+}
+
+.font-size-h1, .todo-list .card-todo .card-date .card-date-week {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1rem;
+}
+
+.font-size-h2, .todo-list .card-todo .card-date .card-date-week .card-date-day, .todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .status {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1rem;
+}
+
+.font-size-h3, .todo-list .card-todo .card-date .card-date-bottom .card-date-month, .todo-list .card-input .card-input-tt {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1rem;
+}
+
+.font-size-h4, .todo-list .card-todo .card-body-list li .card-form-check .card-form-label {
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 1.2rem;
+}
+
+body {
+  background-color: #F0E68C;
+}
+
+.todo-list {
+  height: 100%;
+  width: 70%;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+
+.todo-list .card-todo {
+  border-radius: 15px;
+  position: relative;
+}
+
+.todo-list .card-todo .card-date {
+  padding-top: 2rem;
+  border-radius: 10px;
+  border-bottom: 2px solid #f5c8d0;
+}
+
+.todo-list .card-todo .card-date .card-date-week {
+  color: #FF8EB9;
+}
+
+.todo-list .card-todo .card-date .card-date-week .card-date-day {
+  color: #FFA1B3;
+}
+
+.todo-list .card-todo .card-date .card-date-bottom {
+  padding-top: 10px;
+}
+
+.todo-list .card-todo .card-date .card-date-bottom .card-date-month {
+  color: #F0E68C;
+}
+
+.todo-list .card-todo .card-checkbox .card-header:first-child {
+  background-color: transparent;
+}
+
+.todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .status {
+  color: #50D8A0;
+  border-right: 1px solid #F0E68C;
+  padding-right: 10px;
+}
+
+.todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .status:hover {
+  color: #F0E68C;
+  text-decoration: none;
+}
+
+.todo-list .card-todo .card-checkbox .card-header:first-child .card-body-btn {
+  padding: 1.2rem;
+  border-radius: 50%;
+  background-color: #50D8A0;
+  border: 1px solid transparent;
+  color: whitesmoke;
+}
+
+.todo-list .card-todo .card-body-list {
+  padding-top: 2rem;
+}
+
+.todo-list .card-todo .card-body-list li .card-form-check #input-check {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0.6rem;
+  border: 2px solid #50D8A0;
+  margin-right: 4px;
+  border-radius: 50%;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.todo-list .card-todo .card-body-list li .card-form-check #input-check:hover {
+  cursor: pointer;
+}
+
+.todo-list .card-todo .card-body-list li .card-form-check #dropdown-btn {
+  color: #50D8A0;
+}
+
+.todo-list .card-todo .add-btn {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 1.2rem;
+  border-radius: 50%;
+  background-color: #FFA1B3;
+  border: 1px solid transparent;
+}
+
+.todo-list .card-todo .add-btn .add-btn-icon {
+  color: #F0E68C;
+}
+
+.todo-list .card-input {
+  width: 38%;
+  border-radius: unset;
+}
+
+.todo-list .card-input .card-input-tt {
+  color: #767676;
+  padding-top: 6px;
+}
+/*# sourceMappingURL=styles.css.map */
