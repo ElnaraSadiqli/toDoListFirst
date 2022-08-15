@@ -1,5 +1,6 @@
 body {
     background-color: $clr-yel;
+    line-height: 1.5rem;
 }
 
 // Home Page Design
@@ -9,7 +10,7 @@ body {
     width: 70%;
     margin-top: 10%;
     margin-left: 15%;
-
+    position: relative;
 
     // <!--To Do List Card 
     .card-todo {
@@ -96,7 +97,7 @@ body {
                 .card-form-check {
 
                     //  Input Check for checkbox
-                    #input-check {
+                    .input-check {
                         appearance: none;
                         @include checkBox;
 
@@ -144,8 +145,15 @@ body {
 
     // Input Card
     .card-input {
-        width: 38%;
-        border-radius: unset;
+        display: none;
+        max-width: 30vw;
+        max-height: 15vw;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
 
         // Input Card Header
         .card-input-tt {
@@ -155,8 +163,36 @@ body {
         }
 
         // Input Card Body
-        .card-form{
+        #card-form {
+            margin-top: 2rem;
+            margin-left: 2rem;
 
+            // Input Card Body input
+            .todo-input {
+                padding: 5px;
+                border: 2px solid $clr-yel;
+                color: #767676;
+                font-size: 1.2rem;
+                outline-color: unset;
+
+                &:focus {
+                    outline-color: $clr-lpink;
+                }
+            }
+
+            // Input Card Body Send button
+            .send-btn {
+                margin-left: 2rem;
+                color: $color-green;
+                @extend .font-size-h3;
+                outline-color: unset;
+
+                &:hover {
+                    padding: 10px;
+                    border: 1px solid $color-green;
+                }
+
+            }
         }
     }
 
