@@ -16,14 +16,14 @@ body a {
   color: unset;
 }
 
-.font-size-h1, .todo-list .card-todo .card-date .card-date-week {
+.font-size-h1, .todo-list .card-todo .card-date .card-date-top .card-date-week {
   font-size: 2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 1rem;
 }
 
-.font-size-h2, .todo-list .card-todo .card-date .card-date-week .card-date-day, .todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .status {
+.font-size-h2, .todo-list .card-todo .card-date .card-date-top .card-date-day, .todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .status {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
@@ -68,12 +68,23 @@ body {
   border-bottom: 2px solid #f5c8d0;
 }
 
-.todo-list .card-todo .card-date .card-date-week {
+.todo-list .card-todo .card-date .card-date-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0;
+}
+
+.todo-list .card-todo .card-date .card-date-top .card-date-week {
   color: #FF8EB9;
 }
 
-.todo-list .card-todo .card-date .card-date-week .card-date-day {
+.todo-list .card-todo .card-date .card-date-top .card-date-day {
   color: #FFA1B3;
+  font-weight: 200;
 }
 
 .todo-list .card-todo .card-date .card-date-bottom {
@@ -119,7 +130,7 @@ body {
   padding-top: 2rem;
 }
 
-.todo-list .card-todo .card-body-list li .card-form-check #input-check {
+.todo-list .card-todo .card-body-list li .card-form-check .input-check {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -131,7 +142,7 @@ body {
           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.todo-list .card-todo .card-body-list li .card-form-check #input-check:hover {
+.todo-list .card-todo .card-body-list li .card-form-check .input-check:hover {
   cursor: pointer;
 }
 

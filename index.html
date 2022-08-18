@@ -27,13 +27,14 @@
                 <!-- Card  Header (date)-->
                 <div class="card-header card-date">
                     <!--  Card Header Top (date) Week and day -->
-                    <div class="card-date-top">
-                        <p class="card-date-week">Friday , <span class="card-date-day">31th</span></p>
-
+                    <div class="card-date-top  ">
+                        <p class="card-date-week "></p>
+                        <p class="card-date-day ml-2">31th</p>
                     </div>
+
                     <!-- Card Header Bottom (date)  Month -->
                     <div class="card-date-bottom">
-                        <p class="card-date-month">August</p>
+                        <p class="card-date-month"></p>
                     </div>
 
                 </div>
@@ -52,7 +53,7 @@
                             </div>
                             <!--Card Body (checkbox) Header Button Clear-->
                             <div class="col-2 ">
-                                <button class="card-body-btn btn btn-primary">
+                                <button class="card-body-btn btn btn-primary" id="trash-btn">
                                     <i class="fa-solid fa-trash-can fa-lg"></i>
                                 </button>
                             </div>
@@ -61,83 +62,10 @@
 
                     <!-- Card Body  CheckBox  List -->
                     <ul class="card-body-list ">
-                        <li class="d-flex  justify-content-around align-items-center">
-                            <!-- Form for CheckBox  List -->
-                            <form class="card-form-check">
-                                <input type="checkbox" name="input-check" id="input-check" class="inputName">
-                                <label class="card-form-label" for="input-check">lorem101010101010101010</label>
-                            </form>
-
-                            <!-- Select Option (del or updt)  for CheckBox  -->
-                            <div class="dropdown dropdown-checkbox">
-                                <button class="btn dropdown-toggle" id="dropdown-btn" type="button"
-                                    data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-ellipsis"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa-solid fa-circle-minus"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa-regular fa-pen-to-square"></i>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex justify-content-around mt-4 align-items-center mt-4">
-                            <!-- Form for CheckBox  List -->
-                            <form class="card-form-check">
-                                <input type="checkbox" name="inputName" class="inputName" id="input-check">
-                                <label class="card-form-label" for="input-check">lorem101010101010101010</label>
-                            </form>
-
-                            <!-- Select Option (del or updt)  for CheckBox  -->
-                            <div class="dropdown dropdown-checkbox">
-                                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <i class="fa-solid fa-ellipsis"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa-solid fa-circle-minus"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa-regular fa-pen-to-square"></i>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex justify-content-around mt-4 
-                             align-items-center">
-                            <!-- Form for CheckBox  List -->
-                            <form class="card-form-check">
-                                <input type="checkbox" name="inputName" id="input-check">
-                                <label class="card-form-label" for="input-check">lorem101010101010101010</label>
-                            </form>
-
-                            <!-- Select Option (del or updt)  for CheckBox  -->
-                            <div class="dropdown dropdown-checkbox">
-                                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <i class="fa-solid fa-ellipsis"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa-solid fa-circle-minus"></i>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa-regular fa-pen-to-square"></i>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
 
                     </ul>
 
-                    
+
                     <!--  Button for display input card -->
                     <button class="add-btn">
                         <a href="#" class="add-btn-icon">
@@ -151,10 +79,12 @@
             <!-- Input Card -->
             <section class="card card-input">
                 <!-- Input Card Title -->
-                <div class="card-header ">
+                <div class="card-header d-flex justify-content-between ">
                     <p class="card-input-tt">Add Task</p>
-
+                    <!-- Input Card TT Cancel button -->
+                    <button class="cancel-btn btn" id="btnCancel"> <i class="fas fa-times  addBtnIcon "></i></button>
                 </div>
+
                 <!--  Form  for insert value to  input card-->
                 <div class="card-body card-input-body ">
                     <form action="#" id="card-form">
@@ -162,7 +92,6 @@
                         <input type="text" id="todoInput" name="todoInput" class="todo-input" placeholder="Insert Plan">
                         <!-- Button for insert value to  input card-->
                         <button type="submit" class="send-btn btn">Send</button>
-
                     </form>
                 </div>
 
@@ -189,3 +118,32 @@
 </body>
 
 </html>
+
+
+
+
+<!-- <li class="d-flex  justify-content-around align-items-center">
+                            <---Form for CheckBox  List -->
+<!-- <form class="card-form-check">
+                                <input type="checkbox" name="input-check" id="input-check" class="inputName">
+                                <label class="card-form-label" for="input-check">lorem101010101010101010</label>
+                            </form> -->
+
+<!-- Select Option (del or updt)  for CheckBox  -->
+<!-- <div class="dropdown dropdown-checkbox">
+                                <button class="btn dropdown-toggle" id="dropdown-btn" type="button"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </li> -->
+<!-- </li> -->

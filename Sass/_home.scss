@@ -24,17 +24,24 @@ body {
             border-bottom: 2px solid #f5c8d0;
 
             //  Card Header Top (date) Week and day
-            .card-date-week {
-                color: $clr-pink;
-                @extend .font-size-h1;
+            .card-date-top {
+display: flex;
+align-items: center;
+margin-bottom: 0;
+
+                .card-date-week {
+                    color: $clr-pink;
+                    @extend .font-size-h1;
+                }
 
                 //  Card Header Top (date) day 
                 .card-date-day {
                     color: $clr-lpink;
                     @extend .font-size-h2;
-
+                    font-weight: 200;
                 }
             }
+
 
             //  Card Header Bottom (date)  Month
             .card-date-bottom {
