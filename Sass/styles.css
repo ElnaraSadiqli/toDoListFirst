@@ -47,6 +47,7 @@ body a {
 body {
   background-color: #F0E68C;
   line-height: 1.5rem;
+  font-size: 16px;
 }
 
 .todo-list {
@@ -108,6 +109,7 @@ body {
 }
 
 .todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .status {
+  cursor: pointer;
   color: #50D8A0;
   border-right: 1px solid #F0E68C;
   padding-right: 10px;
@@ -118,8 +120,13 @@ body {
   text-decoration: none;
 }
 
+.todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .active {
+  color: #F0E68C;
+}
+
 .todo-list .card-todo .card-checkbox .card-header:first-child .card-body-btn {
-  padding: 1.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
   border-radius: 50%;
   background-color: #50D8A0;
   border: 1px solid transparent;
@@ -146,6 +153,11 @@ body {
   cursor: pointer;
 }
 
+.todo-list .card-todo .card-body-list li .card-form-check .checked {
+  text-decoration: line-through;
+  color: #767676;
+}
+
 .todo-list .card-todo .card-body-list li .card-form-check #dropdown-btn {
   color: #50D8A0;
 }
@@ -155,7 +167,8 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  padding: 1.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
   border-radius: 50%;
   background-color: #FFA1B3;
   border: 1px solid transparent;
@@ -208,5 +221,37 @@ body {
 .todo-list .card-input #card-form .send-btn:hover {
   padding: 10px;
   border: 1px solid #50D8A0;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+  .todo-list .card-body-btn .fa-lg {
+    font-size: 0.8em;
+  }
+  .todo-list .card-body ul {
+    font-size: 10px;
+  }
+  .todo-list .card-input {
+    max-width: 50vw;
+    max-height: 30vh;
+  }
+  .font-size-h1, .todo-list .card-todo .card-date .card-date-top .card-date-week {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
+  .font-size-h2, .todo-list .card-todo .card-date .card-date-top .card-date-day, .todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .status {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
+  .font-size-h3, .todo-list .card-todo .card-date .card-date-bottom .card-date-month, .todo-list .card-input .card-input-tt, .todo-list .card-input #card-form .send-btn {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
+  .font-size-h4, .todo-list .card-todo .card-body-list li .card-form-check .card-form-label {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

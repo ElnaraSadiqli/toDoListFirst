@@ -25,11 +25,12 @@
         <main class="todo-list">
             <div class="card card-todo">
                 <!-- Card  Header (date)-->
+                
                 <div class="card-header card-date">
                     <!--  Card Header Top (date) Week and day -->
                     <div class="card-date-top  ">
                         <p class="card-date-week "></p>
-                        <p class="card-date-day ml-2">31th</p>
+                        <p class="card-date-day ml-2"></p>
                     </div>
 
                     <!-- Card Header Bottom (date)  Month -->
@@ -45,10 +46,11 @@
                         <div class="row align-items-center">
 
                             <!--Card Body (checkbox) Header Status -->
-                            <div class="col-10 card-body-status">
-                                <a href="#" class="all status">All</a>
-                                <a href="#" class="complate status">Complated</a>
-                                <a href="#" class="progres status">Progress</a>
+                            <div class="col-10 card-body-status " id="filters">
+
+                                <span class="status active" id="all">All</span>
+                                <span class="status" id="complated">Complated</span>
+                                <span class="status" id="pending">Progress</span>
 
                             </div>
                             <!--Card Body (checkbox) Header Button Clear-->

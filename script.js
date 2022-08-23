@@ -8,7 +8,8 @@ let cancelBtn = document.querySelector("#btnCancel");
 let trashBtn = document.querySelector("#trash-btn");
 //  Plus Icon for Add  Btn  to display Input Card
 let inputIcon = document.querySelector(".addBtnIcon");
-
+// Input check
+let inputCheck = document.querySelector(".inputName");
 // Input Card
 let inputCard = document.querySelector(".card-input");
 // Input form on Input Card
@@ -17,12 +18,19 @@ let inPut = document.querySelector("#todoInput");
 let ul = document.querySelector(".card-body-list");
 // Array List
 let dataList = [];
+`use strict`
+//..........................Local storage
+if (localStorage.getItem("dataList") !== null) {
+    
+    dataList = JSON.parse(localStorage.getItem("dataList"));
+}
 
 // Value for Editing Task
 let isEditTask = false;
 
 //Value for Edit task  > Equal id and task id 
 let editId;
+
 
 //...............................Date of card
 let date = new Date();
@@ -93,15 +101,17 @@ function setDay() {
 
 eventListeners();
 
+
 // Display All Tasks when update page
-displayList(e);
+displayList(document.querySelector("span.active").id);
 
 
+// document.querySelector("span.active").id
 function eventListeners() {
     // Change Icon Add Btn for display input card
     inputIcon.addEventListener("click", () => {
         changeIcon();
-        displayInput();
+        displayInput()
     });
 
     // Click Add btn for display updating and new task
@@ -112,7 +122,6 @@ function eventListeners() {
         inputCard.style.display = "none";
         inputIcon.classList.remove("fa-times")
 
-        e.preventDefault();
     })
 
     // Trash All Task
@@ -127,7 +136,8 @@ function changeIcon() {
 
 }
 // Click Add button for  display Input Card 
-function displayInput(event) {
+function displayInput(e) {
+
 
     if (!inputCard.style.display) {
 
@@ -141,14 +151,25 @@ function displayInput(event) {
         inputCard.style.display = "none"
     }
 
-    event.preventDefault();
+    e.preventDefault();
+
+
 }
+
+
+//.................Filters for  card header title
+
+// Filters for status
+let filters = document.querySelectorAll("#filters span");
+
+
+console.log(filters)
 
 
 // --------------------Add Task 
 
 // Display Task on List 
-function displayList(e) {
+function displayList(filter) {
 
     // Check List empty or not
     if (dataList.length == 0) {
@@ -156,16 +177,22 @@ function displayList(e) {
 
         ul.style.color = "#6C757D";
         ul.style.fontSize = "1.2rem";
+
     } else {
         ul.innerHTML = "";
 
         for (let data of dataList) {
 
+            let complate = data.status == "complated" ? "checked" : "";
 
-            let li = `<li class="d-flex  justify-content-around mt-4 align-items-center">
+            // Filter all task as status
+            if (filter == data.status || filter == "all") {
+
+
+                let li = `<li class="d-flex flex-1  justify-content-between mt-4 align-items-center">
                 <form class="card-form-check">
-                   <input type="checkbox"  id="${data.id}" class="inputName input-check">
-                   <label class="card-form-label" for="${data.id}">${data.name}</label>
+                   <input type="checkbox"  onclick="displayStat(this)" id="${data.id}" class="inputName input-check" ${complate} >
+                   <label class="card-form-label ${complate}" for="${data.id}">${data.name}</label>
                </form>
            
                <div class="dropdown dropdown-checkbox">
@@ -186,17 +213,40 @@ function displayList(e) {
                    </li>`
 
 
-            ul.insertAdjacentHTML("beforeend", li);
+                ul.insertAdjacentHTML("beforeend", li);
+            }
 
         }
         inPut.value = "";
-
+        localStorage.setItem("dataList",JSON.stringify(dataList));
     }
 
-    e.preventDefault();
+}
+
+//....................Filters
+
+// Change color  automatic when click Title
+for (let span of filters) {
+
+    span.addEventListener("click", () => {
+
+        // If span has active class remove
+        document.querySelector('span.active').classList.remove("active");
+
+        // When click span  add active class 
+        span.classList.add("active");
+
+        displayList(document.querySelector("span.active").id)
+
+
+    });
+
+
 
 }
-// List Display on Screen 
+
+
+//...............Display the tasks on Screen when click btn
 function newTask(e) {
 
     //If  Input value is empty
@@ -209,16 +259,16 @@ function newTask(e) {
             dataList.push({
                 "id": dataList.length + 1,
                 "name": inPut.value,
-                "status": "complated",
+                "status": "pending"
             })
 
         } else {
             // Update Task
             addUpdatingTask();
         }
-
+        displayList(document.querySelector("span.active").id);
+        localStorage.setItem("dataList",JSON.stringify(dataList));
     }
-    displayList();
 
     e.preventDefault();
 
@@ -226,17 +276,16 @@ function newTask(e) {
 
 // --------------------Delete Task 
 function deleteTask(item) {
+ let id;
 
-    let id;
-
-
-    id = dataList.findIndex((task) => {
+ id = dataList.findIndex((task) => {
         task.id == item;
     })
 
     dataList.splice(id, 1);
 
-    displayList();
+    displayList(document.querySelector("span.active").id);
+    localStorage.setItem("dataList",JSON.stringify(dataList));
 }
 
 // --------------------Update Task 
@@ -255,7 +304,7 @@ function updateTask(taskId, taskName) {
 
     inPut.classList.add("active");
 
-
+    localStorage.setItem("dataList",JSON.stringify(dataList));
 }
 
 function addUpdatingTask() {
@@ -275,5 +324,39 @@ function addUpdatingTask() {
 function clearAll() {
 
     dataList.splice(0, dataList.length);
-    displayList();
+    displayList("all");
+    localStorage.setItem("dataList",JSON.stringify(dataList));
+
+}
+
+// Line throught Task if checked
+function displayStat(statCheck) {
+
+    let label = statCheck.nextElementSibling;
+
+       let s;
+
+    if (statCheck.checked) {
+
+        statCheck.style.backgroundColor = "#C0F0E7";
+        label.classList.add("checked");
+
+        s = "complated"
+
+    } else {
+        statCheck.style.backgroundColor = "transparent";
+
+        label.classList.remove("checked");
+        s = "pending"
+    }
+
+
+    for (let data of dataList) {
+
+        if (data.id == statCheck.id) {
+            data.status = s;
+        }
+    }
+    localStorage.setItem("dataList",JSON.stringify(dataList));
+
 }

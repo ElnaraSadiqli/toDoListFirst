@@ -1,6 +1,8 @@
+
 body {
     background-color: $clr-yel;
     line-height: 1.5rem;
+    font-size: 16px;
 }
 
 // Home Page Design
@@ -25,9 +27,9 @@ body {
 
             //  Card Header Top (date) Week and day
             .card-date-top {
-display: flex;
-align-items: center;
-margin-bottom: 0;
+                display: flex;
+                align-items: center;
+                margin-bottom: 0;
 
                 .card-date-week {
                     color: $clr-pink;
@@ -71,6 +73,7 @@ margin-bottom: 0;
 
                     .status {
                         @extend .font-size-h2;
+                        cursor: pointer;
                         color: $color-green;
                         border-right: 1px solid $txt-clr-orange;
                         padding-right: 10px;
@@ -80,7 +83,13 @@ margin-bottom: 0;
                             text-decoration: none;
                         }
                     }
+
+                    .active {
+                        color: $txt-clr-orange;
+
+                    }
                 }
+
 
                 // Card Body (checkbox) Header Button Clear
                 .card-body-btn {
@@ -112,6 +121,11 @@ margin-bottom: 0;
                             cursor: pointer;
                         }
 
+                    }
+
+                    .checked {
+                        text-decoration: line-through;
+                        color: #767676;
                     }
 
                     // Label  for checkbox
@@ -201,6 +215,11 @@ margin-bottom: 0;
     }
 
 }
+
+
+
+
+
 
 
 

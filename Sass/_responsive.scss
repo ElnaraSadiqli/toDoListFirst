@@ -1,0 +1,61 @@
+$breakpoints-mobile-m:600px;
+$breakpoints-tablet:768px;
+
+
+
+@media (max-width: $breakpoints-mobile-m) {
+
+
+  body {
+    font-size: 12px;
+  }
+
+  .todo-list {
+
+    // Card Body (checkbox) Header Button Clear
+    .card-body-btn {
+
+
+      .fa-lg {
+        font-size: 0.8em;
+      }
+    }
+
+    .card-body {
+
+      ul {
+        font-size: 10px;
+      }
+    }
+
+    // Card Input
+    .card-input {
+      max-width: 50vw;
+      max-height: 30vh;
+      
+    }
+  }
+
+  // Size  Properties
+  .font-size-h1 {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
+
+  .font-size-h2 {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
+
+  .font-size-h3 {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
+
+  .font-size-h4 {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
+
+
+}
