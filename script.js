@@ -1,5 +1,8 @@
+// Card
+let todoCard = document.querySelector(".card-todo");
 //  Add  Btn  for display Input Card
 let btnInput = document.querySelector('.add-btn');
+
 // Send btn for push task  on List
 let sendBtn = document.querySelector(".send-btn");
 // Cancel btn for cancel Input Card 
@@ -21,7 +24,7 @@ let dataList = [];
 `use strict`
 //..........................Local storage
 if (localStorage.getItem("dataList") !== null) {
-    
+
     dataList = JSON.parse(localStorage.getItem("dataList"));
 }
 
@@ -121,6 +124,7 @@ function eventListeners() {
     cancelBtn.addEventListener("click", (item) => {
         inputCard.style.display = "none";
         inputIcon.classList.remove("fa-times")
+        todoCard.classList.remove("card-blur");
 
     })
 
@@ -138,17 +142,20 @@ function changeIcon() {
 // Click Add button for  display Input Card 
 function displayInput(e) {
 
-
     if (!inputCard.style.display) {
 
         inputCard.style.display = "none"
+
     }
     if (inputCard.style.display === "none") {
+        todoCard.classList.add("card-blur");
+        inputCard.style.display = "block";
 
-        inputCard.style.display = "block"
+
 
     } else {
         inputCard.style.display = "none"
+
     }
 
     e.preventDefault();
@@ -218,7 +225,7 @@ function displayList(filter) {
 
         }
         inPut.value = "";
-        localStorage.setItem("dataList",JSON.stringify(dataList));
+        localStorage.setItem("dataList", JSON.stringify(dataList));
     }
 
 }
@@ -267,7 +274,7 @@ function newTask(e) {
             addUpdatingTask();
         }
         displayList(document.querySelector("span.active").id);
-        localStorage.setItem("dataList",JSON.stringify(dataList));
+        localStorage.setItem("dataList", JSON.stringify(dataList));
     }
 
     e.preventDefault();
@@ -276,16 +283,16 @@ function newTask(e) {
 
 // --------------------Delete Task 
 function deleteTask(item) {
- let id;
+    let id;
 
- id = dataList.findIndex((task) => {
+    id = dataList.findIndex((task) => {
         task.id == item;
     })
 
     dataList.splice(id, 1);
 
     displayList(document.querySelector("span.active").id);
-    localStorage.setItem("dataList",JSON.stringify(dataList));
+    localStorage.setItem("dataList", JSON.stringify(dataList));
 }
 
 // --------------------Update Task 
@@ -304,7 +311,7 @@ function updateTask(taskId, taskName) {
 
     inPut.classList.add("active");
 
-    localStorage.setItem("dataList",JSON.stringify(dataList));
+    localStorage.setItem("dataList", JSON.stringify(dataList));
 }
 
 function addUpdatingTask() {
@@ -325,7 +332,7 @@ function clearAll() {
 
     dataList.splice(0, dataList.length);
     displayList("all");
-    localStorage.setItem("dataList",JSON.stringify(dataList));
+    localStorage.setItem("dataList", JSON.stringify(dataList));
 
 }
 
@@ -334,7 +341,7 @@ function displayStat(statCheck) {
 
     let label = statCheck.nextElementSibling;
 
-       let s;
+    let s;
 
     if (statCheck.checked) {
 
@@ -357,6 +364,6 @@ function displayStat(statCheck) {
             data.status = s;
         }
     }
-    localStorage.setItem("dataList",JSON.stringify(dataList));
+    localStorage.setItem("dataList", JSON.stringify(dataList));
 
 }

@@ -1,8 +1,13 @@
-
 body {
     background-color: $clr-yel;
     line-height: 1.5rem;
     font-size: 16px;
+    filter: drop-shadow(2px 5px 3px white);
+}
+
+// Blur effect for Js
+.card-blur {
+    filter: blur(4px);
 }
 
 // Home Page Design
@@ -44,7 +49,6 @@ body {
                 }
             }
 
-
             //  Card Header Bottom (date)  Month
             .card-date-bottom {
                 padding-top: 10px;
@@ -54,15 +58,12 @@ body {
                     color: $txt-clr-orange;
                 }
             }
-
-
         }
 
         // Card Body (checkbox) 
         .card-checkbox {
 
             // Card Body (checkbox) Header 
-
             .card-header:first-child {
                 background-color: transparent;
 
@@ -90,16 +91,12 @@ body {
                     }
                 }
 
-
                 // Card Body (checkbox) Header Button Clear
                 .card-body-btn {
                     @include buttons($color-green);
                     color: whitesmoke;
                 }
-
-
             }
-
         }
 
         // Card Body List (checkbox) 
@@ -142,31 +139,30 @@ body {
             }
         }
 
+        // Card Display Input Button
         .add-btn {
             position: absolute;
             left: 50%;
+            bottom: -24px;
             transform: translateX(-50%);
             @include buttons($clr-lpink);
 
-            // &:focus {
-            //     padding: 1.6rem;
-            //     box-shadow: $color-green 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-            // }
             .add-btn-icon {
                 color: $clr-yel;
             }
 
-
         }
-
     }
+
+
 
     // Input Card
     .card-input {
         display: none;
-        max-width: 30vw;
-        max-height: 15vw;
+        max-height: 10rem;
+        max-width: 22rem;
         position: absolute;
+        filter: drop-shadow(2px 5px 3px $clr-gry);
         margin: auto;
         left: 0;
         right: 0;
@@ -180,41 +176,38 @@ body {
             padding-top: 6px;
         }
 
-        // Input Card Body
-        #card-form {
-            margin-top: 2rem;
-            margin-left: 2rem;
+        // Input Card Body input
+        .todo-input {
 
-            // Input Card Body input
-            .todo-input {
-                padding: 5px;
-                border: 2px solid $clr-yel;
-                color: #767676;
-                font-size: 1.2rem;
-                outline-color: unset;
+            padding: 5px;
+            border: 2px solid $clr-yel;
+            color: #767676;
+            font-size: 1.2rem;
+            outline-color: unset;
+            flex-grow: 1;
 
-                &:focus {
-                    outline-color: $clr-lpink;
-                }
-            }
-
-            // Input Card Body Send button
-            .send-btn {
-                margin-left: 2rem;
-                color: $color-green;
-                @extend .font-size-h3;
-                outline-color: unset;
-
-                &:hover {
-                    padding: 10px;
-                    border: 1px solid $color-green;
-                }
-
+            &:focus {
+                outline-color: $clr-lpink;
             }
         }
-    }
 
+        // Input Card Body Send button
+        .send-btn {
+            margin-right: 0;
+            color: $color-green;
+            @extend .font-size-h3;
+            outline-color: unset;
+
+            &:hover {
+                padding: 10px;
+                border: 1px solid $color-green;
+            }
+
+        }
+    }
 }
+
+
 
 
 

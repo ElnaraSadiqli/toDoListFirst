@@ -1,61 +1,186 @@
+$breakpoints-mobile-s:365px;
 $breakpoints-mobile-m:600px;
 $breakpoints-tablet:768px;
 
-
-
-@media (max-width: $breakpoints-mobile-m) {
-
-
-  body {
-    font-size: 12px;
+// Responsive for Small Phone
+@media screen and (max-width: $breakpoints-mobile-s) {
+  * {
+    font-size: 10px !important;
   }
 
   .todo-list {
 
-    // Card Body (checkbox) Header Button Clear
-    .card-body-btn {
+    // Todo List Card
+    .card-todo {
+      // Todo Card List
+      .card-checkbox {
 
+        // Todo Card List body Status on header
+        .card-body-status {
 
-      .fa-lg {
-        font-size: 0.8em;
+          .status {
+            font-size: 0.9rem !important;
+          }
+        }
+
+        // Card Body (checkbox) Header Button Clear
+        .card-body-btn {
+          margin-right: 3px !important;
+          background-color: transparent !important;
+
+          .fa-lg {
+            font-size: 0.8em;
+            color: $clr-yel;
+          }
+        }
+
+      }
+
+    }
+
+     // Card for Input Task
+     .card-input {
+
+      // Card Body for Input Task
+      .card-input-body {
+        display: flex;
+        flex-direction: column !important;
+
       }
     }
 
-    .card-body {
+  }
+}
+// Responsive for Normal Phone
+@media screen and (max-width: $breakpoints-mobile-m) {
 
-      ul {
-        font-size: 10px;
+  * {
+    font-size: 14px;
+
+
+  }
+
+
+  .todo-list {
+
+    // Todo List Card
+    .card-todo {
+
+      // Todo List Card Header Date
+      .card-date {
+        padding-top: 1.2rem;
+
+        .card-date-month {
+          margin-bottom: 7px;
+        }
+      }
+
+      // Todo Card List
+      .card-checkbox {
+
+        // Todo Card List body Status on header
+        .card-body-status {
+
+          .status {
+            font-size: 1rem;
+            border-right: unset !important;
+          }
+        }
+
+        // Card Body (checkbox) Header Button Clear
+        .card-body-btn {
+          width: unset !important;
+          height: unset !important;
+
+          .fa-lg {
+            font-size: 0.8em;
+          }
+        }
+
+        // Todo Card   List ul size
+        .card-body-list {
+          font-size: 0.9rem !important;
+        }
+      }
+
+      // Button for Display input card
+      .add-btn {
+        width: 30px !important;
+        height: 30px !important;
+
+        .addBtnIcon {
+          font-size: 12px;
+          padding-bottom: 10px;
+        }
       }
     }
 
-    // Card Input
+    // Card for Input Task
     .card-input {
-      max-width: 50vw;
-      max-height: 30vh;
-      
+      max-height: 9rem;
+
+      // Card Body for Input Task
+      .card-input-body {
+        display: flex;
+
+        // Card Body Input 
+        .todo-input {
+          font-size: 12px;
+          padding: 2px;
+        }
+
+        // Card Body Send button
+        .send-btn {
+          margin: 5px;
+        }
+
+      }
+    }
+
+    // Size  Properties
+    .font-size-h1 {
+      font-size: 1rem;
+      line-height: 0.8rem;
+    }
+
+    .font-size-h2 {
+      font-size: 1rem;
+      line-height: 0.8rem;
+    }
+
+    .font-size-h3 {
+      font-size: 0.9rem;
+      line-height: 0.8rem;
+    }
+
+    .font-size-h4 {
+      font-size: 0.9rem;
+      line-height: 0.8rem;
     }
   }
 
-  // Size  Properties
-  .font-size-h1 {
-    font-size: 1rem;
-    line-height: 0.8rem;
-  }
+}
+// Responsive for Tablet
+@media screen and (max-width: $breakpoints-tablet) {
 
-  .font-size-h2 {
-    font-size: 1rem;
-    line-height: 0.8rem;
-  }
-
-  .font-size-h3 {
-    font-size: 1rem;
-    line-height: 0.8rem;
-  }
-
-  .font-size-h4 {
-    font-size: 1rem;
-    line-height: 0.8rem;
+  * {
+    font-size: 15px !important;
   }
 
 
+  // Card for Input Task
+  .card-input {
+    // max-height: 10rem;
+
+    // // Card Body for Input Task
+    .card-input-body {
+      display: flex;
+
+      // Card Body Send button
+      .send-btn {
+        margin-left: 0.5rem !important;
+      }
+    }
+
+  }
 }

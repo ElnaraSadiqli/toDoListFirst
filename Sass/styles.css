@@ -30,7 +30,7 @@ body a {
   line-height: 1rem;
 }
 
-.font-size-h3, .todo-list .card-todo .card-date .card-date-bottom .card-date-month, .todo-list .card-input .card-input-tt, .todo-list .card-input #card-form .send-btn {
+.font-size-h3, .todo-list .card-todo .card-date .card-date-bottom .card-date-month, .todo-list .card-input .card-input-tt, .todo-list .card-input .send-btn {
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 600;
@@ -44,10 +44,122 @@ body a {
   line-height: 1.2rem;
 }
 
+@media screen and (max-width: 365px) {
+  * {
+    font-size: 10px !important;
+  }
+  .todo-list .card-todo .card-checkbox .card-body-status .status {
+    font-size: 0.9rem !important;
+  }
+  .todo-list .card-todo .card-checkbox .card-body-btn {
+    margin-right: 3px !important;
+    background-color: transparent !important;
+  }
+  .todo-list .card-todo .card-checkbox .card-body-btn .fa-lg {
+    font-size: 0.8em;
+    color: #F0E68C;
+  }
+  .todo-list .card-input .card-input-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  * {
+    font-size: 14px;
+  }
+  .todo-list .card-todo .card-date {
+    padding-top: 1.2rem;
+  }
+  .todo-list .card-todo .card-date .card-date-month {
+    margin-bottom: 7px;
+  }
+  .todo-list .card-todo .card-checkbox .card-body-status .status {
+    font-size: 1rem;
+    border-right: unset !important;
+  }
+  .todo-list .card-todo .card-checkbox .card-body-btn {
+    width: unset !important;
+    height: unset !important;
+  }
+  .todo-list .card-todo .card-checkbox .card-body-btn .fa-lg {
+    font-size: 0.8em;
+  }
+  .todo-list .card-todo .card-checkbox .card-body-list {
+    font-size: 0.9rem !important;
+  }
+  .todo-list .card-todo .add-btn {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .todo-list .card-todo .add-btn .addBtnIcon {
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+  .todo-list .card-input {
+    max-height: 9rem;
+  }
+  .todo-list .card-input .card-input-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .todo-list .card-input .card-input-body .todo-input {
+    font-size: 12px;
+    padding: 2px;
+  }
+  .todo-list .card-input .card-input-body .send-btn {
+    margin: 5px;
+  }
+  .todo-list .font-size-h1, .todo-list .card-todo .card-date .card-date-top .card-date-week {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
+  .todo-list .font-size-h2, .todo-list .card-todo .card-date .card-date-top .card-date-day, .todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .status {
+    font-size: 1rem;
+    line-height: 0.8rem;
+  }
+  .todo-list .font-size-h3, .todo-list .card-todo .card-date .card-date-bottom .card-date-month, .todo-list .card-input .card-input-tt, .todo-list .card-input .send-btn {
+    font-size: 0.9rem;
+    line-height: 0.8rem;
+  }
+  .todo-list .font-size-h4, .todo-list .card-todo .card-body-list li .card-form-check .card-form-label {
+    font-size: 0.9rem;
+    line-height: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 15px !important;
+  }
+  .card-input .card-input-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .card-input .card-input-body .send-btn {
+    margin-left: 0.5rem !important;
+  }
+}
+
 body {
   background-color: #F0E68C;
   line-height: 1.5rem;
   font-size: 16px;
+  -webkit-filter: drop-shadow(2px 5px 3px white);
+          filter: drop-shadow(2px 5px 3px white);
+}
+
+.card-blur {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
 }
 
 .todo-list {
@@ -165,6 +277,7 @@ body {
 .todo-list .card-todo .add-btn {
   position: absolute;
   left: 50%;
+  bottom: -24px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 3.2rem;
@@ -180,9 +293,11 @@ body {
 
 .todo-list .card-input {
   display: none;
-  max-width: 30vw;
-  max-height: 15vw;
+  max-height: 10rem;
+  max-width: 22rem;
   position: absolute;
+  -webkit-filter: drop-shadow(2px 5px 3px #6C757D);
+          filter: drop-shadow(2px 5px 3px #6C757D);
   margin: auto;
   left: 0;
   right: 0;
@@ -195,63 +310,29 @@ body {
   padding-top: 6px;
 }
 
-.todo-list .card-input #card-form {
-  margin-top: 2rem;
-  margin-left: 2rem;
-}
-
-.todo-list .card-input #card-form .todo-input {
+.todo-list .card-input .todo-input {
   padding: 5px;
   border: 2px solid #F0E68C;
   color: #767676;
   font-size: 1.2rem;
   outline-color: unset;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
-.todo-list .card-input #card-form .todo-input:focus {
+.todo-list .card-input .todo-input:focus {
   outline-color: #FFA1B3;
 }
 
-.todo-list .card-input #card-form .send-btn {
-  margin-left: 2rem;
+.todo-list .card-input .send-btn {
+  margin-right: 0;
   color: #50D8A0;
   outline-color: unset;
 }
 
-.todo-list .card-input #card-form .send-btn:hover {
+.todo-list .card-input .send-btn:hover {
   padding: 10px;
   border: 1px solid #50D8A0;
-}
-
-@media (max-width: 600px) {
-  body {
-    font-size: 12px;
-  }
-  .todo-list .card-body-btn .fa-lg {
-    font-size: 0.8em;
-  }
-  .todo-list .card-body ul {
-    font-size: 10px;
-  }
-  .todo-list .card-input {
-    max-width: 50vw;
-    max-height: 30vh;
-  }
-  .font-size-h1, .todo-list .card-todo .card-date .card-date-top .card-date-week {
-    font-size: 1rem;
-    line-height: 0.8rem;
-  }
-  .font-size-h2, .todo-list .card-todo .card-date .card-date-top .card-date-day, .todo-list .card-todo .card-checkbox .card-header:first-child .card-body-status .status {
-    font-size: 1rem;
-    line-height: 0.8rem;
-  }
-  .font-size-h3, .todo-list .card-todo .card-date .card-date-bottom .card-date-month, .todo-list .card-input .card-input-tt, .todo-list .card-input #card-form .send-btn {
-    font-size: 1rem;
-    line-height: 0.8rem;
-  }
-  .font-size-h4, .todo-list .card-todo .card-body-list li .card-form-check .card-form-label {
-    font-size: 1rem;
-    line-height: 0.8rem;
-  }
 }
 /*# sourceMappingURL=styles.css.map */
