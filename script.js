@@ -137,6 +137,7 @@ function eventListeners() {
 // Change icon for Add btn  to input card
 function changeIcon() {
     inputIcon.classList.toggle("fa-times")
+    todoCard.classList.remove("card-blur");
 
 }
 // Click Add button for  display Input Card 
